@@ -69,12 +69,17 @@ public class StudentGroup implements StudentArrayOperation {
 		{
 			throw new IllegalArgumentException("illegal argument exception");
 		}
-		
+		this.addFirst(student);
 	}
 
 	@Override
 	public void addLast(Student student) {
 		// Add your implementation here
+		if(students==null)
+		{
+			throw new IllegalArgumentException("illegal argument exception");
+		}
+		this.addLast(student);
 	}
 
 	@Override
@@ -92,11 +97,25 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void remove(int index) {
 		// Add your implementation here
+		if(index<0||index>students.length)
+		{
+			throw new IllegalArgumentException("illegal argument exception");
+		}
+                         
+                          
 	}
 
 	@Override
 	public void remove(Student student) {
 		// Add your implementation here
+              
+		if(students==null)
+		 {
+                   throw new IllegalArgumentException("Student not exist");
+		 }
+                                           
+			
+		 
 	}
 
 	@Override
