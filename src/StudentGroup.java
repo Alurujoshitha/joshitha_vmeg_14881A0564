@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.lang.IllegalArgumentException;
 
 /**
  * A fix-sized array of students
@@ -32,24 +33,43 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void setStudents(Student[] students) {
 		// Add your implementation here
+		if(students==null)
+		{
+			throw new IllegalArgumentException("illegal argument exception");
+		}
+
 		this.students = students;
 	}
 
 	@Override
 	public Student getStudent(int index) {
 		// Add your implementation here
+		if(index<0||index>students.length)
+		{
+			throw new IllegalArgumentException("illegal argument exception");
+		}
 		return this.students[index];
 	}
 
 	@Override
 	public void setStudent(Student student, int index) {
 		// Add your implementation here
+		if(students==null||(index<0||index>students.length))
+		{
+			throw new IllegalArgumentException("illegal argument exception");
+		}
+
 		this.students[index] = student;
 	}
 
 	@Override
 	public void addFirst(Student student) {
 		// Add your implementation here
+		if(students==null)
+		{
+			throw new IllegalArgumentException("illegal argument exception");
+		}
+		
 	}
 
 	@Override
@@ -60,6 +80,13 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void add(Student student, int index) {
 		// Add your implementation here
+		if(students==null||(index<0||index>students.length))
+		{
+			throw new IllegalArgumentException("illegal argument exception");
+		}
+                                   					
+                                  			
+		
 	}
 
 	@Override
