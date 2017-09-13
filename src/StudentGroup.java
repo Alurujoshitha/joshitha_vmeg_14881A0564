@@ -114,7 +114,16 @@ public class StudentGroup implements StudentArrayOperation {
                    throw new IllegalArgumentException("Student not exist");
 		 }
                                            
-			
+		for(int i=0;i<students.length;i++)
+		{
+			if(students[i]==student)
+			{
+				for(int x=1;x<=students.length-i;x++)
+				{
+					students[i]=students[i+1];
+				}
+			}
+		}	
 		 
 	}
 
